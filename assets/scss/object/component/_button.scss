@@ -1,0 +1,24 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixins" as *;
+
+// 汎用ボタン
+.c-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &--red {
+    background-color: $color-main;
+    color: #fff;
+  }
+}

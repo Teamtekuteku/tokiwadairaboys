@@ -1,0 +1,126 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixins" as *;
+
+.p-match {
+  // タブ
+  &__tab-list {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3.2rem;
+    overflow-x: auto; // スマホで入り切らない場合横スクロール
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__tab-item {
+    width: 8rem;
+    padding: 1.2rem 0;
+    background-color: #eee;
+    color: $color-title;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 4px;
+    &.is-active {
+      background-color: $color-title; // 濃い紺色
+      color: $color-white;
+    }
+  }
+
+  // 試合結果リスト
+  &__list {
+    margin-top: 2.4rem;
+    display: grid;
+    grid-template-columns: 1fr; // SPは1列
+    gap: 1.2rem; // カード間の隙間
+
+    @include pc {
+      grid-template-columns: repeat(2, 1fr); // ★PCは2列（等幅）
+      gap: 1.6rem 2.4rem; // 縦の隙間 1.6rem / 横の隙間 2.4rem
+    }
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem 2rem;
+    background-color: #f2f2f2;
+    border-left: 0.4rem solid $color-title;
+    // margin-bottom は gridの gap で制御するため削除または 0 に
+    margin-bottom: 0;
+
+    @include pc {
+      padding: 2rem; // 2列になるので、パディングを少し控えめにするとスッキリします
+    }
+  }
+
+  &__info {
+    &-date {
+      font-size: 1.1rem;
+      color: $color-text;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    &-opponent {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: $color-title;
+    }
+  }
+
+  &__score-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  &__score {
+    font-size: 2.4rem;
+    font-weight: 700;
+    font-family: $font-en;
+    color: $color-title;
+    letter-spacing: 0.1em;
+  }
+
+  // 勝敗ラベル
+  &__label {
+    // 全ラベル共通の基本スタイル
+    display: inline-flex; // 文字を上下左右中央に寄せやすくするため
+    justify-content: center;
+    align-items: center;
+    width: 3.9rem;
+    height: 2rem;
+    border-radius: 0.2rem;
+    font-size: 1rem; // ラベル内の文字サイズ
+    font-weight: bold;
+    line-height: 1;
+
+    // --- 状態ごとの出し分け ---
+
+    // 勝ち：赤背景 × 白文字
+    &--win {
+      background-color: $color-main; // 赤
+      color: $color-white; // 白
+    }
+
+    // 負け：紺背景 × 白文字
+    &--lose {
+      background-color: $color-title; // 紺色（変数 $color-title を想定）
+      color: $color-white; // 白
+    }
+
+    // 引き分け：グレー背景 × 黒文字
+    &--draw {
+      background-color: $color-white;
+      color: #000; // 黒
+    }
+  }
+}

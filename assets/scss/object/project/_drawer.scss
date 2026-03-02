@@ -1,0 +1,140 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixins" as *;
+
+/* ==============================================
+   Project: Drawer (SP用フルスクリーンメニュー)
+   ============================================== */
+.p-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%; // 画面全体を覆う
+  height: 100vh;
+  background-color: #fff;
+  z-index: 200; // ヘッダー(100)より上に表示
+  overflow-y: auto;
+
+  // 右からスライド＆フェードイン
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    visibility 0.4s;
+
+  &.is-active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include pc {
+    display: none; // PCでは非表示
+  }
+
+  &__inner {
+    padding: 30px 0 117px 46px;
+  }
+
+  // --- ドロワー内ヘッダー（ロゴとXボタン） ---
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  &__logo {
+    width: 65px; // ロゴマークのサイズ調整
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 20%;
+    right: 0%;
+    transform: translateY(-50%);
+    width: 90px;
+    height: 90px;
+    background: $color-main;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    // バツ印の作成
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 28px;
+      height: 2px;
+      background-color: $color-white;
+
+      &:nth-child(1) {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      &:nth-child(2) {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+
+  // --- ナビゲーションリスト（2カラム） ---
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 50px 48px 4px;
+    gap: 18px;
+  }
+  &__item {
+    border-bottom: 1px solid $color-main;
+  }
+  &__link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &-ja {
+      color: $color-title;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    &-en {
+      color: $color-main; // 赤色
+      font-family: $font-en; // Hanumanなどの英字フォント
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  // --- 下部ボタン ---
+  &__button-wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 50px 0 4px;
+  }
+
+  &__button {
+    width: 100%;
+    max-width: 176px; // ボタンが広がりすぎないように制限
+    padding: 16px;
+    font-size: 16px;
+    line-height: calc(22.4 / 16);
+  }
+  &__instagram-icon {
+    max-width: 37px;
+  }
+}

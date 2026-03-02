@@ -1,0 +1,99 @@
+@use "../foundation/variables" as *;
+@use "../foundation/mixins" as *;
+.l-footer {
+  background-color: $color-title; // 濃紺
+  color: $color-white;
+
+  &__inner {
+    padding: 4rem 4.5rem;
+  }
+
+  &__banners {
+    width: 100%;
+    max-width: 32rem; // SPでの最大幅
+    display: flex;
+    flex-direction: column; // SPは縦並び
+    gap: 1.6rem;
+    margin: 0 auto 4rem; // 中央寄せ
+    @include pc {
+      max-width: 70rem; // 2列が綺麗に収まる幅に調整
+      flex-direction: row; // 横並び
+      flex-wrap: wrap; // 折り返し許可
+      justify-content: center; // 中央に寄せる
+      gap: 2rem;
+    }
+  }
+  &-link {
+    width: 100%; // SPは横一杯
+
+    @include pc {
+      // ★ ここがポイント：2列にするために「50% - 隙間」を指定
+      width: calc(50% - 1rem);
+    }
+  }
+  &__banner-list {
+    max-width: 300px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &__sns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    @include pc {
+      display: none;
+    }
+
+    &-label {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: $font-en;
+      line-height: calc(24 / 20);
+    }
+
+    &-icons {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    &-link-01 {
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+    &-link-02 {
+      width: 3.4rem;
+      height: 2.4rem;
+      display: flex;
+      align-items: center;
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+
+  &__copyright {
+    background-color: $color-title; // さらに濃い紺
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 1rem;
+
+    small {
+      font-size: 1rem;
+    }
+  }
+}

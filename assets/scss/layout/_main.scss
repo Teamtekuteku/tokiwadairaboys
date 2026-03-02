@@ -1,0 +1,10 @@
+@use "../foundation/variables" as *;
+@use "../foundation/mixins" as *;
+
+.l-main {
+  width: 100%;
+
+  @include pc {
+    width: calc(100% - 300px - 40px); // 全体幅 - サイドバー幅 - 余白
+  }
+}

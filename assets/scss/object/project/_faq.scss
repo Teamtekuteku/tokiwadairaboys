@@ -1,0 +1,145 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixins" as *;
+
+.p-faq {
+  position: relative;
+  overflow: hidden;
+
+  // --- 赤い背景の擬似要素 ---
+  &::before {
+    content: "";
+    position: absolute;
+    top: 6%;
+    left: 0;
+    width: 66%; // SPでの赤い面積（デザインに合わせて調整）
+    height: 90%;
+    background-color: $color-main; // 赤色
+    z-index: 0;
+
+    @include pc {
+      width: calc(50% - 10rem); // PCでは左側に寄せる
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1; // 擬似要素より上に表示
+  }
+
+  &__header {
+    margin-bottom: 2.4rem;
+    color: $color-white;
+  }
+
+  &__title-en {
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: $font-en;
+    line-height: 1;
+  }
+
+  &__title-ja {
+    font-size: 1.4rem;
+    margin-top: 0.8rem;
+    font-weight: 700;
+  }
+
+  // --- アコーディオン部分 ---
+  &__list {
+    background-color: $color-white;
+    box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.05);
+    @include pc {
+      width: 75%;
+      margin: 0 auto 0 10rem;
+    }
+  }
+
+  &__item {
+    border-bottom: 0.1rem solid #eee;
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &.is-active {
+      .p-faq__question::after {
+        transform: translateY(-50%) rotate(180deg); // 矢印を反転
+      }
+    }
+  }
+
+  &__question {
+    width: 100%;
+    padding: 2.4rem 6rem 2.4rem 2rem; // 右側に矢印用のスペースを確保
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-title;
+    background: $color-white;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    // 左側の濃い紺色ライン
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0.8rem;
+      height: 2rem;
+      background-color: $color-title;
+    }
+
+    // ★右側の矢印画像
+    &::after {
+      content: "";
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2.4rem; // 画像のサイズに合わせて調整
+      height: 2.4rem; // 画像のサイズに合わせて調整
+      background-image: url(/assets/images/accordion-arrow.png); // ★矢印画像のパス
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      transition: transform 0.3s ease; // アニメーション
+    }
+  }
+
+  // ★開いている時のスタイル（親の .is-active を利用）
+  &__item.is-active {
+    .p-faq__question::after {
+      transform: translateY(-50%) rotate(180deg); // 180度回転して上向きに
+    }
+  }
+
+  &__answer {
+    height: 0; // 初期状態は高さ0
+    overflow: hidden;
+    opacity: 0; // 最初は透明
+    transition:
+      height 0.3s ease-out,
+      opacity 0.3s ease-out; // スライド速度
+  }
+  &__item.is-active {
+    .p-faq__answer {
+      opacity: 1;
+      // ★ height は JS で計算して直接付与するので、ここでは指定しません
+    }
+  }
+  &__answer-inner {
+    background-color: $color-bg;
+    font-family: $font-sans;
+    font-weight: 500;
+    line-height: calc(24 / 16);
+    vertical-align: middle;
+    padding: 1.2rem 0 1.2rem 3rem;
+    @include pc {
+      padding: 1.2rem 0 1.2rem 4.2rem;
+    }
+  }
+}

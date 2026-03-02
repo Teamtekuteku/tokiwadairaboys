@@ -1,0 +1,54 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixins" as *;
+
+// ハンバーガーボタン
+.c-hamburger {
+  position: relative;
+  z-index: 110; // ドロワーより上に配置
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  padding: 0;
+
+  @include pc {
+    display: none; // PCでは非表示
+  }
+
+  &__line {
+    position: absolute;
+    left: 10px;
+    width: 30px;
+    height: 2px;
+    background-color: $color-main;
+    transition: all 0.3s ease;
+
+    &:nth-of-type(1) {
+      top: 10px;
+    }
+    &:nth-of-type(2) {
+      top: 20px;
+    }
+    &:nth-of-type(3) {
+      top: 30px;
+    }
+  }
+  // アニメーション時の状態
+  &.is-active {
+    .c-hamburger__line {
+      &:nth-of-type(1) {
+        top: 21px;
+        transform: rotate(45deg);
+      }
+      &:nth-of-type(2) {
+        opacity: 0;
+      }
+      &:nth-of-type(3) {
+        top: 21px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

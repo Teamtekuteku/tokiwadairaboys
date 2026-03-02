@@ -1,0 +1,96 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixins" as *;
+
+.p-sponsor {
+  &__sp {
+    display: block;
+    @include pc {
+      display: none;
+    }
+  }
+  &__title {
+    font-family: Inter;
+    font-weight: 800;
+    font-size: 3.2rem;
+    letter-spacing: -0.001em;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: $color-title; // 濃紺
+  }
+
+  &__text {
+    font-family: $font-sans;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: calc(26 / 15);
+    letter-spacing: 0.06em;
+    text-align: center;
+    vertical-align: middle;
+    color: $color-title;
+  }
+
+  &__list {
+    margin-top: 3.2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // SPは2列
+    gap: 1rem;
+
+    @include pc {
+      grid-template-columns: repeat(4, 1fr); // PCは4列
+      gap: 2rem;
+    }
+  }
+
+  &__item {
+    background-color: #f2f2f2;
+    aspect-ratio: 3 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #999;
+    font-weight: 700;
+    border-radius: 0.4rem;
+  }
+  &__sidebar-title {
+    font-family: Inter;
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: -0.1em;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: $color-title;
+    text-align: center;
+  }
+  &__sidebar-text {
+    font-family: $font-sans;
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+  &__sidebar-list {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__sidebar-item {
+    width: 15rem;
+    height: 7rem;
+    background-color: $color-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-sans;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 1.6rem;
+    line-height: calc(25.6 / 16);
+    text-align: center;
+    vertical-align: middle;
+    color: #999999;
+    margin-bottom: 1.6rem;
+  }
+}

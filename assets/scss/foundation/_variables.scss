@@ -1,0 +1,20 @@
+/* ==============================================
+   Foundation: Variables (変数)
+   ============================================== */
+
+// カラーパレット
+$color-main: #bd0404; // 常盤平ボーイズのテーマカラー（赤）
+$color-title: #100d3a; // タイトル文字色
+$color-bg: #eeeeee; // 背景の薄いグレー（セクション背景用）
+$color-white: #ffffff;
+$color-link: #d32f2f; // リンクカラー
+$color-text: #121212; // テキストカラー
+
+// フォントファミリー
+$font-sans: "Noto Sans JP", sans-serif;
+$font-serif: "Zen Old Mincho", serif;
+$font-en: "Hanuman", serif; // 英語・数字などのアクセント用
+
+// サイズ関連
+$header-height-sp: 105px;
+$header-height-pc: 90px;

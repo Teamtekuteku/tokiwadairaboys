@@ -1,0 +1,18 @@
+[
+  {
+    "grade": "6",
+    "date": "2024.02.11",
+    "type": "公式戦",
+    "opponent": "松戸ドリームス",
+    "score": "7 - 2",
+    "result": "WIN"
+  },
+  {
+    "grade": "6",
+    "date": "2024.02.04",
+    "type": "練習試合",
+    "opponent": "柏ファイターズ",
+    "score": "3 - 4",
+    "result": "LOSE"
+  }
+]

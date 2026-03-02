@@ -1,0 +1,73 @@
+@use "../foundation/variables" as *;
+@use "../foundation/mixins" as *;
+
+/* ==============================================
+   Layout: Wrapper (コンテンツ幅の制御)
+   ============================================== */
+
+.l-inner {
+  display: flex; // ★横並びにする
+  justify-content: space-between; // ★左右の両端に振り分ける
+  align-items: center; // ★縦の中央を揃える
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @include pc {
+    padding: 0 2.4rem;
+  }
+  &__section {
+    padding: 7rem 4.5rem;
+    @include pc {
+      padding: 12rem 6rem 10rem;
+    }
+  }
+  &__section-movie {
+    @extend .l-inner__section;
+    padding: 7rem 1rem;
+    @include pc {
+      padding: 8rem 6rem 10rem;
+    }
+  }
+  &__section-faq {
+    padding: 7rem 1rem;
+    @include pc {
+      padding: 14rem 6rem 12rem;
+    }
+  }
+  &__section-match {
+    padding: 7rem 1rem;
+    @include pc {
+      padding: 14rem 6rem 12rem;
+    }
+  }
+  &__section-ground {
+    padding: 9rem 3rem 2rem;
+  }
+  &__section-sponsor {
+    padding: 2rem 1rem 5rem;
+  }
+  &__section-sidebar {
+    padding: 1.4rem 0;
+  }
+}
+
+// layouts/_layout.scss
+
+.l-main-container {
+  display: flex;
+  flex-direction: column; // SP
+
+  @include pc {
+    flex-direction: row; // PCで横並び
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.l-main-content {
+  flex: 1; // 残りの幅いっぱいに広がる
+  min-width: 0; // flex崩れ防止
+  border-right: 0.1rem solid #333;
+}

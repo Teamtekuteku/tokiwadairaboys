@@ -1,0 +1,30 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixins" as *;
+
+/* ==============================================
+   Component
+   ============================================== */
+// ロゴ
+.c-logo {
+  display: flex; // ★横並びにする魔法のプロパティ
+  align-items: center; // ★画像と文字の縦の「中心」を合わせる
+  gap: 12px; // ★画像と文字の間の隙間（デザインに合わせて調整してください）
+  line-height: 1;
+  margin: 0;
+
+  &__link {
+    display: block; // 画像を囲むaタグはblockのままでOK
+  }
+
+  &__img {
+    height: 46px; // ★SP時のロゴサイズ（デザインに合わせて調整）
+    width: auto;
+  }
+
+  // ★追加：テキスト部分のスタイル
+  &__text {
+    font-size: 18px;
+    font-weight: 900;
+    color: $color-title;
+  }
+}

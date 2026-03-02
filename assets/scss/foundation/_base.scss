@@ -1,0 +1,86 @@
+@use "../foundation/variables" as *;
+@use "../foundation/mixins" as *;
+
+/* ==============================================
+   Foundation: Base (基本スタイル)
+   ============================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  // SP基準: 375px幅で 1rem = 10px になる計算
+  font-size: calc(100vw / 375 * 10);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+
+  @include tab {
+    line-height: 1.2;
+    font-size: 1vw; // タブレット時は画面幅の1%を基準に
+  }
+
+  @include pc {
+    // PC基準: 1440px幅で 1rem = 10px になる計算
+    font-size: calc(100vw / 1440 * 10);
+  }
+
+  // 1440px以上の巨大モニターで文字が大きくなりすぎないようにストッパーをかける場合
+  @include pc-l {
+    font-size: 10px; // あるいは任意の固定値
+  }
+}
+body {
+  font-family: $font-sans; // デフォルトは Noto Sans JP
+  color: $color-text;
+  background-color: $color-white;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $color-text;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+
+  &:hover {
+    color: $color-main;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 1.4;
+  // ※デザイン上で明朝体の見出しが多い場合は、ここで font-family: $font-serif; を指定してもOKです。
+}
+
+p {
+  margin: 0;
+}

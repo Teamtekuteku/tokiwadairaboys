@@ -1,0 +1,43 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixins" as *;
+
+.c-title {
+  &__en {
+    font-family: $font-en;
+    font-weight: 900;
+    font-style: Black;
+    font-size: 3.4rem;
+    line-height: calc(30 / 34);
+    letter-spacing: 0px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: $color-main;
+    margin-bottom: 0.2rem;
+  }
+  &__ja {
+    font-weight: 700;
+    font-style: Bold;
+    line-height: calc(16 / 22.4);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    font-family: $font-sans;
+    color: $color-title;
+  }
+  &__sidebar {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.6rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #000;
+  }
+  &__sidebar::before {
+    content: "";
+    background-image: url(/assets/images/sidebar-icon.png);
+    width: 1.5rem;
+    height: 1.7rem;
+    display: block;
+    margin-left: 0.8rem;
+    background-size: cover;
+  }
+}

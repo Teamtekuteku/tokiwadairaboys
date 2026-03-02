@@ -1,0 +1,11 @@
+@use "../foundation/variables" as *;
+@use "../foundation/mixins" as *;
+
+.l-sidebar {
+  display: none;
+  @include pc {
+    display: block;
+    width: 16%; // サイドバーの幅を固定
+    padding: 0 1.8rem;
+  }
+}

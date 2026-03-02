@@ -1,0 +1,29 @@
+//breakpoint //
+
+@mixin sp {
+  @media (max-width: 559px) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media (min-width: 560px) {
+    @content;
+  }
+}
+@mixin tab-l {
+  @media (min-width: 720px) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media (min-width: 960px) {
+    @content;
+  }
+}
+@mixin pc-l {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
