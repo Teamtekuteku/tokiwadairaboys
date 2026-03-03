@@ -46,7 +46,8 @@
     padding: 9rem 3rem 2rem;
   }
   &__section-sponsor {
-    padding: 2rem 1rem 5rem;
+    padding: 8rem 1rem 5rem;
+    text-align: center;
   }
   &__section-sidebar {
     padding: 1.4rem 0;
@@ -70,4 +71,8 @@
   flex: 1; // 残りの幅いっぱいに広がる
   min-width: 0; // flex崩れ防止
   border-right: 0.1rem solid #333;
+  &__contact {
+    @extend .l-main-content;
+    margin-top: 10.5rem;
+  }
 }

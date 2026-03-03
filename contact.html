@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>お問い合わせ・体験お申し込み | 常盤平ボーイズ</title>
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="l-header">
+      <div class="l-header__inner">
+        <h1 class="c-logo">
+          <a href="index.html" class="c-logo__link">
+            <img
+              src="assets/images/logo_tokiwadairaboys.png"
+              alt="常盤平ボーイズ"
+              class="c-logo__img"
+            />
+          </a>
+          <span class="c-logo__text">常盤平ボーイズ</span>
+        </h1>
+
+        <nav class="p-global-nav">
+          <ul class="p-global-nav__list">
+            <li class="p-global-nav__item">
+              <a href="#" class="p-global-nav__link">チーム情報</a>
+            </li>
+            <li class="p-global-nav__item">
+              <a href="#" class="p-global-nav__link">よくある質問</a>
+            </li>
+            <li class="p-global-nav__item">
+              <a href="#" class="p-global-nav__link">試合結果</a>
+            </li>
+            <li class="p-global-nav__item">
+              <a href="#" class="p-global-nav__link">スケジュール</a>
+            </li>
+
+            <li class="p-global-nav__item p-global-nav__item--has-child">
+              <a href="#" class="p-global-nav__link">メンバー紹介</a>
+              <ul class="p-global-nav__sub-list">
+                <li class="p-global-nav__sub-item">
+                  <a href="#" class="p-global-nav__sub-link">選手名鑑</a>
+                </li>
+                <li class="p-global-nav__sub-item">
+                  <a href="#" class="p-global-nav__sub-link">スタッフ名鑑</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="p-global-nav__item">
+              <a href="#" class="p-global-nav__link">お問い合わせ</a>
+            </li>
+          </ul>
+          <a href="#" class="c-button c-button--red p-global-nav__button"
+            >見学・体験会</a
+          >
+        </nav>
+
+        <button
+          type="button"
+          class="c-hamburger js-hamburger"
+          aria-controls="drawer-nav"
+          aria-expanded="false"
+        >
+          <span class="c-hamburger__line"></span>
+          <span class="c-hamburger__line"></span>
+          <span class="c-hamburger__line"></span>
+        </button>
+      </div>
+    </header>
+
+    <nav id="drawer-nav" class="p-drawer js-drawer" aria-hidden="true">
+      <div class="p-drawer__inner">
+        <div class="p-drawer__header">
+          <div class="p-drawer__logo">
+            <img src="assets/images/logo_drawer.png" alt="常盤平ボーイズ" />
+          </div>
+          <button
+            type="button"
+            class="p-drawer__close js-drawer-close"
+            aria-label="閉じる"
+          >
+            <span></span><span></span>
+          </button>
+        </div>
+
+        <ul class="p-drawer__list">
+          <li class="p-drawer__item">
+            <a href="#" class="p-drawer__link">
+              <span class="p-drawer__link-ja">チーム紹介動画</span>
+              <span class="p-drawer__link-en">MOVIE</span>
+            </a>
+          </li>
+          <li class="p-drawer__item">
+            <a href="#" class="p-drawer__link">
+              <span class="p-drawer__link-ja">よくある質問</span>
+              <span class="p-drawer__link-en">FAQ</span>
+            </a>
+          </li>
+          <li class="p-drawer__item">
+            <a href="#" class="p-drawer__link">
+              <span class="p-drawer__link-ja">試合結果</span>
+              <span class="p-drawer__link-en">MATCH RESULTS</span>
+            </a>
+          </li>
+          <li class="p-drawer__item">
+            <a href="#" class="p-drawer__link">
+              <span class="p-drawer__link-ja">スケジュール</span>
+              <span class="p-drawer__link-en">SCHEDULE</span>
+            </a>
+          </li>
+          <li class="p-drawer__item">
+            <a href="#" class="p-drawer__link">
+              <span class="p-drawer__link-ja">活動場所</span>
+              <span class="p-drawer__link-en">LOCATION</span>
+            </a>
+          </li>
+          <li class="p-drawer__item">
+            <a href="#" class="p-drawer__link">
+              <span class="p-drawer__link-ja">選手名簿</span>
+              <span class="p-drawer__link-en">PLAYER LIST</span>
+            </a>
+          </li>
+          <li class="p-drawer__item">
+            <a href="#" class="p-drawer__link">
+              <span class="p-drawer__link-ja">スタッフ名簿</span>
+              <span class="p-drawer__link-en">STAFF LIST</span>
+            </a>
+          </li>
+          <li class="p-drawer__item">
+            <a href="#" class="p-drawer__link">
+              <span class="p-drawer__link-ja">お問い合わせ</span>
+              <span class="p-drawer__link-en">CONTACT</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="p-drawer__button-wrap">
+          <a href="#" class="c-button c-button--red p-drawer__button"
+            >見学・体験予約</a
+          >
+          <div class="p-drawer__link-sns">
+            <a href="#" class="p-drawer__instagram">
+              <img
+                src="assets/images/instagram_icon.png"
+                alt="インスタグラム"
+                class="p-drawer__instagram-icon"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="c-overlay js-overlay"></div>
+
+    <main class="l-main-content__contact">
+      <section class="p-contact-page">
+        <div class="l-section__contact">
+          <div class="c-title">
+            <h2 class="c-title__en">CONTACT</h2>
+            <span class="c-title__ja">体験・見学お申し込み</span>
+          </div>
+
+          <p class="p-contact-page__lead">
+            以下のフォームに必要事項をご記入の上、送信してください。<br />
+            内容を確認後、担当者より折り返しご連絡いたします。
+          </p>
+
+          <div class="p-contact-page__form-wrapper">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLScvtvK3pE5ArdsIKgPq8j1ZF2Jan_L1Zt6nrCP6G0-OegVlhg/viewform?embedded=true"
+              width="100%"
+              height="1600"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              id="js-form-iframe"
+              >読み込んでいます…</iframe
+            >
+          </div>
+        </div>
+      </section>
+
+      <div id="js-modal" class="c-modal">
+        <div class="c-modal__inner">
+          <div class="c-modal__content">
+            <h3 class="c-modal__title">送信完了しました</h3>
+            <p class="c-modal__text">
+              体験・見学のお申し込みありがとうございます。<br />
+              内容を確認し、担当者より3日以内にご連絡いたします。
+            </p>
+            <a href="index.html" class="c-button c-button--red js-modal-close"
+              >トップページへ戻る</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="l-footer__copyright">
+        <small>© 2026 Tokiwadaira Boys. All Rights Reserved.</small>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

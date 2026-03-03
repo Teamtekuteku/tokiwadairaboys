@@ -1,0 +1,36 @@
+// これらが正しいファイルを指していますか？
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixins" as *;
+
+.p-contact-page {
+  margin: 10.5rem 0 0;
+  padding: 5rem 2rem 0;
+  background-color: #f8f9fa; // フォームが目立つように少しだけ背景に色を付ける
+
+  &__lead {
+    text-align: left;
+    margin-bottom: 4rem;
+    line-height: 1.8;
+    font-size: 1.5rem;
+  }
+
+  &__form-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden; // 角丸からはみ出さないように
+    padding: 1rem; // スマホでの余白
+
+    @include pc {
+      padding: 2rem;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      // heightは項目数に合わせて調整してください
+    }
+  }
+}

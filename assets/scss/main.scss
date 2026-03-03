@@ -21,6 +21,7 @@
 @use "object/component/hamburger";
 @use "object/component/overlay";
 @use "object/component/title";
+@use "object/component/modal";
 
 // 4. Object - Project
 @use "object/project/global-nav";
@@ -33,6 +34,7 @@
 @use "object/project/cat";
 @use "object/project/ground";
 @use "object/project/sponsor";
+@use "object/project/contact-page";
 
 // 5. Object - Utility
 @use "object/utility/margin";

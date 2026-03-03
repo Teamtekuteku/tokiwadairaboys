@@ -124,4 +124,19 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Match data error:", error);
       });
   }
+  // 簡易版：iframeが2回読み込まれたら「送信後」と判断するロジック
+  const iframe = document.getElementById("js-form-iframe");
+  let loadCount = 0;
+
+  iframe.onload = function () {
+    loadCount++;
+    if (loadCount > 1) {
+      // 2回目の読み込み＝送信完了後の画面
+      showModal();
+    }
+  };
+
+  function showModal() {
+    document.getElementById("js-modal").classList.add("is-show");
+  }
 });
