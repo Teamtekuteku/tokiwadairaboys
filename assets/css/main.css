@@ -1048,7 +1048,7 @@ th {
 }
 
 .p-hero {
-  background-image: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 5%, rgba(255, 255, 255, 0) 15%), url(/assets/images/main_visual_sp.jpg);
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 5%, rgba(255, 255, 255, 0) 15%), url(../images/main_visual_sp.jpg);
   background-repeat: no-repeat;
   background-position: 36% center;
   background-size: cover;
@@ -1218,7 +1218,7 @@ th {
   display: block;
   width: 0.6rem;
   height: 1.4rem;
-  background-image: url(/assets/images/btn-arrow.png);
+  background-image: url(../images/btn-arrow.png);
   background-repeat: no-repeat;
   background-size: contain;
   margin-top: 0.6rem;
@@ -1361,7 +1361,7 @@ th {
   transform: translateY(-50%);
   width: 2.4rem;
   height: 2.4rem;
-  background-image: url(/assets/images/accordion-arrow.png);
+  background-image: url(../images/accordion-arrow.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -1500,19 +1500,24 @@ th {
   position: relative;
   overflow: hidden;
 }
-.p-cta .p-cta {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-.p-cta .p-cta__bg {
+.p-cta__bg {
   position: relative;
   padding: 8rem 0;
-  background-image: url(/assets/images/cat.png);
+  background-image: url("../images/cat.png");
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
   text-align: center;
+}
+.p-cta__bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
 }
 .p-cta__inner {
   position: relative;
@@ -1520,7 +1525,7 @@ th {
 }
 .p-cta__title {
   color: #ffffff;
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 3.2rem;
   line-height: 1.5;
@@ -1534,28 +1539,22 @@ th {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 34rem;
+  width: 100%;
+  max-width: 34rem;
   height: 7.3rem;
   background-color: #ffffff;
   color: #100d3a;
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 700;
   font-size: 1.8rem;
-  letter-spacing: 0.02;
-  text-align: center;
-  vertical-align: middle;
-  border-radius: 3.2rem;
+  letter-spacing: 0.02em;
+  border-radius: 4rem;
   text-decoration: none;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .p-cta__btn:hover {
   transform: translateY(-0.2rem);
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
-}
-@media (min-width: 960px) {
-  .p-cta__btn {
-    font-size: 1.8rem;
-  }
 }
 
 .no-pc {
