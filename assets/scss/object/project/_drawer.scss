@@ -137,4 +137,41 @@
   &__instagram-icon {
     max-width: 37px;
   }
+  &__item--has-child {
+    // 矢印アイコンの装飾（任意）
+    .p-drawer__link::after {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-top: 2px solid #ccc;
+      border-right: 2px solid #ccc;
+      transform: rotate(135deg); // 下向き
+      margin-left: 10px;
+      transition: transform 0.3s;
+    }
+
+    &.is-open .p-drawer__link::after {
+      transform: rotate(-45deg); // 上向き
+    }
+  }
+
+  &__sub-list {
+    overflow: hidden;
+    padding-left: 1rem;
+    height: 0; // 初期は隠す
+    transition: height 0.3s ease-out;
+  }
+
+  &__sub-item {
+    border-top: 1px solid #eee;
+  }
+
+  &__sub-link {
+    display: block;
+    padding: 1.2rem 3rem; // 親より少し右にずらす
+    font-size: 1.4rem;
+    color: $color-text;
+    text-decoration: none;
+  }
 }

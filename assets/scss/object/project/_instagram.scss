@@ -153,4 +153,18 @@
       margin-top: 0.6rem;
     }
   }
+  &____img-wrap {
+    position: relative; // ラベルの基準点
+  }
+  &__label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: $color-main; // チームの赤
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 1;
+  }
 }
